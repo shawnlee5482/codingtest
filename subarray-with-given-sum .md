@@ -31,22 +31,27 @@ int main() {
 }
 
 void find(vector<int> arr, int size, int target) {
-    for(int i = 0; i < size; i++) {
-        int sum = arr[i];
-        if(arr[i] == target) {
-            cout << i+1 << " " << i+1 << endl;
+    int start = 0;
+    int end = 0;
+    int sum = 0;
+    
+    while(start <= end && start < size && end < size ) {
+        sum = sum + arr[end];
+        if(sum > target) {
+            sum = sum - arr[start] - arr[end];
+            start++;
+            if(start > end) {
+                end=start;
+                sum = 0;
+            }
+            continue;
+        }
+        if(sum == target) {
+            cout << start+1 << " " << end+1 << endl;
             return;
         }
-        for(int j = i+1; j < size; j++) {
-            sum += arr[j];
-            if(sum == target) {
-                cout << i+1 << " " << j+1 << endl;
-                return;
-            }
-            if(sum >= target) break;
-        }
+        end++;
     }
     cout << -1 << endl;
-}
                 
 ```
