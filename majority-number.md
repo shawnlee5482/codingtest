@@ -9,11 +9,6 @@
 using namespace std;
 
 int main() {
-	//create hash
-	
-	//iterate array
-	    //put the count in hash, update major_num, max_count
-	//if max_count > n / 2,  print majo_num otherwise -1
     int t; cin >> t;
     for(int i = 0; i < t; i++) {
         int n; cin >> n;
