@@ -51,7 +51,6 @@ int submax(vector<int> v, int left, int right) {
     // base condition
     if(left == right) return v[left];
     if(left < 0 || left > right || right >= v.size()) {
-        //cout << "**" << left << " " << right << " ";
         return INT_MIN;
     }
 	int mid = (left + right) / 2;
