@@ -1,4 +1,4 @@
-# codingtest
+# Kadane alogorithm
 
 
 https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
@@ -35,6 +35,8 @@ int main() {
 ```
 
 # Using recursion
+https://www.youtube.com/watch?v=ohHWQf1HDfU
+
 ```
 #include <iostream>
 #include <vector>
