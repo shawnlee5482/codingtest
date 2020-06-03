@@ -1,4 +1,4 @@
-# codingtest
+# Longest Increasing Sequence
 
 ```
 #include <iostream>
