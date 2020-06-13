@@ -2,7 +2,7 @@
 
 1. Try all substring
 
-2. Using hash check duplication fast**
+2. Using hash check duplication fast
 
 ```
 #include <iostream>
