@@ -1,4 +1,8 @@
 # form-a-panlindrome
+
+1. if both end is same, just inner subarray
+2. if not, try to extend left side or right side
+3. use memoization to speed up
 ```
 #include <iostream>
 #include<bits/stdc++.h>
