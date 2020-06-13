@@ -1,5 +1,7 @@
 # longest-distinct-characters-in-string
 
+https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string/0/
+
 1. Try all substring
 
 2. Using hash check duplication fast
