@@ -1,8 +1,8 @@
 # longest-distinct-characters-in-string
 
-** Try all substring **
+1. Try all substring
 
-** using hash check duplication fast **
+2. Using hash check duplication fast**
 
 ```
 #include <iostream>
