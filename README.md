@@ -1,4 +1,15 @@
 # Relative Sorting
+See the link for understanding the problem
+Sort array1 in the order of array2. 
+If element is not in array2, sort them and append at the end
+https://practice.geeksforgeeks.org/problems/relative-sorting/0
+
+make a hash1 for second
+iterate the first array
+	if it is in hash1, increase in the hash2
+	if not push in a separate array
+print hash2 in the order of second array
+print separate array
 
 ```
 #include <iostream>
