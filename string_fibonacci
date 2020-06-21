@@ -89,7 +89,7 @@ describe('checkFibonacciString', () => {
     test('should return peroper value for 9999 1 10000 - carry over case', () => {
         expect(checkFibonacciString("9999110000")).toEqual([9, 9991, 10000]);
     });
-    test('should return peroper value for 1', () => {
+    test('should return proper value for 1', () => {
         expect(checkFibonacciString("1")).toEqual([]);
     });
 });
