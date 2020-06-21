@@ -1,0 +1,97 @@
+#find fibonacci from string
+
+```
+function checkFibonacciString(s) {
+    if(!s || s.length === 0) return [];
+    if(s.charAt(0) === '0') throw new Error('String should not start with 0');
+    var n = s.length;
+    var imax =  Math.floor((n-1)/2);
+    var bFound = false;
+    let res = [];
+    for(var i = 0; i < imax; i++) {
+        var jmax = Math.floor((n-i-1)/2);
+        var jmax2 = n - 2*(i+1);
+        if(jmax2 < jmax) jmax = jmax2;
+        for(var j = 1; j < jmax+1; j++) {
+            let k = 0;
+            let isFail = false;
+            res = [];
+            var s1 = s.substring(0, i+1)
+            var s2 = s.substring(i+1, j+1+i)
+            var s3;
+            while(k < n) {
+                if(k !== 0) {
+                    s1 = s2;
+                    s2 = s3;
+                }
+                var v1 = parseInt(s1, 10);
+                var v2 = parseInt(s2, 10);
+                var v3 = v1 + v2 + '';
+                if(k === 0) {
+                    k = s1.length + s2.length;
+                    res.push(v1);
+                    res.push(v2);
+                }
+                s3 = s.substring(k, k + v3.length);
+                if(v3 !== s3) {
+                    isFail = true;
+                    res = [];
+                    //console.log(`fail: s1 = ${s1}, s2 = ${s2}, s3 = ${s3}`);
+                    break;
+                }
+                //console.log(`success: s1 = ${s1}, s2 = ${s2}, s3 = ${s3}`);
+                res.push(v1+v2);
+                k += v3.length;
+            }
+            if(!isFail) {
+                var s1 = s.substring(0, i+1);
+                var s2 = s.substring(i+1, j+1+i);
+                //console.log(`match: s1 = ${s1}, s2 = ${s2}`);
+                return res;            
+            }
+        }
+    }
+    return res;
+}
+
+exports.checkFibonacciString = checkFibonacciString;
+```
+
+```
+const {checkFibonacciString} = require('./a');
+
+describe('checkFibonacciString', () => {
+    test('should return empty array if string is null string', () => {
+        expect(checkFibonacciString("")).toEqual([]);
+    });
+    test('should return peroper value for null', () => {
+        expect(checkFibonacciString(null)).toEqual([]);
+    });
+    test('should return peroper value for undefined', () => {
+        expect(checkFibonacciString(undefined)).toEqual([]);
+    });
+    test('should return peroper value for 1234565791035', () => {
+        expect(checkFibonacciString("1234565791035")).toEqual([123, 456, 579, 1035]);
+    });
+    test('should return peroper value for 11235813', () => {
+        expect(checkFibonacciString("11235813")).toEqual([1, 1,  2, 3, 5, 8, 13]);
+    });
+    test('should return peroper value for 1101111', () => {
+        expect(checkFibonacciString("1101111")).toEqual([11, 0, 11, 11]);
+    });
+    test('should return peroper value for 112358130', () => {
+        expect(checkFibonacciString("112358130")).toEqual([]);
+    });
+
+    test('should return peroper value for 110111211101113', () => {
+        expect(checkFibonacciString("110111211101113")).toEqual([1101112, 1, 1101113]);
+    });
+    test('should return peroper value for 9999 1 10000 - carry over case', () => {
+        expect(checkFibonacciString("9999110000")).toEqual([9, 9991, 10000]);
+    });
+    test('should return peroper value for 1', () => {
+        expect(checkFibonacciString("1")).toEqual([]);
+    });
+});
+
+```
