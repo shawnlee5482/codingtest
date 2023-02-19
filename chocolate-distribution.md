@@ -1,5 +1,5 @@
 # codingtest
-# tet
+# test
 ```
 #include <iostream>
 #include <vector>
