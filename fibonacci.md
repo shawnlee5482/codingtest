@@ -1,5 +1,5 @@
 ## Fibonacci
-## test1234
+## test12345
 log2 ^ n is the optimum  (by using matrix multiplication)
 
 function fib(n)
